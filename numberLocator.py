@@ -6,7 +6,7 @@ from phonenumbers import carrier
 from opencage.geocoder import OpenCageGeocode
 
 # API key from Opencage
-key = ""
+key = "80f07637f41c4fea9051c83cff4216fe"
 
 # Locate the number
 thisNumber = phonenumbers.parse(number)
