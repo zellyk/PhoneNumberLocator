@@ -15,21 +15,22 @@ print(yourLocation)
 
 
 # get service provider
-
 service_provider = phonenumbers.parse(number)
 print(carrier.name_for_number(service_provider, "en"))
 
+# query the dictionary for latitude x longitude
 geocoder = OpenCageGeocode(key)
 query = str(yourLocation)
 results = geocoder.geocode(query)
 
+# assign lat x lng
 lat = results[0]['geometry']['lat']
 lng = results[0]['geometry']['lng']
 
+# print lat x long in terminal
 print(lat, lng)
 
+# pass info onto the html file, open in browser
 myMap = folium.Map(location=[lat, lng],zoom_start=9)
-
 folium.Marker([lat, lng], popup=yourLocation).add_to(myMap)
-
 myMap.save("myLocation.html")
